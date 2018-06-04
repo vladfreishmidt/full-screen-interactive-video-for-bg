@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Full Screen Interactive Video Background</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="wrapper">
+		<script>
+   			 window.addEventListener("message", function (message) {
+       		 var msg = message.data && JSON.parse(message.data);
+     		   if (msg.name === "hapyak_embedded_experience_aspect_ratio_available") {
+            	var hyIframe = document.getElementById("hapyak_embedded_experience_3632");
+            	hyIframe.style.paddingTop = 100 * (1 / +msg.aspectRatio) + "%";
+        	}
+    	});
+		</script>
+
+		<div style="position: relative; display: block; max-width: 100%;">
+    		<div id="hapyak_embedded_experience_3632" style="padding-top: 50%; transition: padding-top 0.4s linear">
+        	<iframe src="https://www.hapyak.com/portal/experience/viewer/99638924154649c5a1e70c0dde535961?embed_experience=true" allowfullscreen webkitallowfullscreen mozallowfullscreen style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
+    </div>
+</div>	
+	</div>	
+</body>
+</html>
